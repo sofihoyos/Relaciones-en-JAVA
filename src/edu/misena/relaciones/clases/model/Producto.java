@@ -9,12 +9,12 @@ public class Producto {
      * El último código asignado a un producto.
      * Este campo se usa para generar nuevos códigos únicos para cada instancia de {@code Producto}.
      */
-    private static int ultimoCodigo;
+    private static int ultimoCodigo=0;
 
     /**
      * TAREA: Crea un constructor que asigna automáticamente un código único al producto incrementando {@code ultimoCodigo}.
      */
-    public Producto(String codigo, String nombre, double precio){
+    public Producto(String nombre, double precio){
         ultimoCodigo++;
         this.codigo = "PROD" +ultimoCodigo;
         this.codigo=codigo;
@@ -22,6 +22,16 @@ public class Producto {
         this.precio=precio;
     }
 
+
+    //getters//
+    public String getCodigo(){return codigo;}
+    public String getNombre(){return nombre;}
+    public double getPrecio(){return precio;}
+
+    //seters//
+    public void setCodigo(String codigo) {this.codigo = codigo;}
+    public void setNombre(String nombre) {this.nombre = nombre;}
+    public void setPrecio(double precio) {this.precio = precio;}
 
     /**
      * Devuelve una representación en cadena del producto.
@@ -38,15 +48,4 @@ public class Producto {
                 "\t" + nombre +
                 "\t" + precio;
     }
-
-
-    //getters//
-    public String getCodigo(){return codigo;}
-    public String getNombre(){return nombre;}
-    public double getPrecio(){return precio;}
-
-    //seters//
-    public void setCodigo(String codigo) {this.codigo = codigo;}
-    public void setNombre(String nombre) {this.nombre = nombre;}
-    public void setPrecio(double precio) {this.precio = precio;}
 }
